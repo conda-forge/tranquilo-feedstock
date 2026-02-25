@@ -17,17 +17,15 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools >=45
-    - wheel
-    - setuptools-scm >=6.0
+    - hatchling
+    - hatch-vcs
     - pip
   run:
     - python >={{ python_min }}
-    - estimagic >=0.4.2
+    - joblib
     - numba
     - numpy >=1.17.0
     - pandas
-    - plotly
     - scipy >=1.2.1
 
 test:
