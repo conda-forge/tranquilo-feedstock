@@ -1,5 +1,5 @@
 {% set name = "tranquilo" %}
-{% set version = "0.0.5" %}
+{% set version = "0.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,27 +7,25 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tranquilo-{{ version }}.tar.gz
-  sha256: 33824f3907c1582cb786a1a6b56d9135fed8ff82359158033099559413ab8741
+  sha256: 54a03184f12f67ba82342eb58773febc54b613e2b56b384c1b785e71d51fe454
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools >=45
-    - wheel
-    - setuptools-scm >=6.0
+    - hatchling
+    - hatch-vcs
     - pip
   run:
     - python >={{ python_min }}
-    - estimagic >=0.4.2
+    - joblib
     - numba
     - numpy >=1.17.0
     - pandas
-    - plotly
     - scipy >=1.2.1
 
 test:
